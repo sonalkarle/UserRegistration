@@ -5,25 +5,24 @@ namespace RegExPattern
 {
     class Program
     {
-        //Validate with predefiend format mobile number
-        Regex mobileNumberregex = new Regex(@"^[1-9]{2}[][1-9]1{0}$");
-       
-        public void mobileNumberValidation(string mobileNumber)
+       //Validate Password Rule1
+        Regex passwordregex = new Regex(@"^[A-Za-z]{8}$");
+        
+        public void passwordValidation(string password)
         {
-            Console.WriteLine("mobile number" + mobileNumber);
-            if (mobileNumberregex.IsMatch(mobileNumber))
-                Console.WriteLine("Valid number ");
+            Console.WriteLine("password " + password);
+            if (passwordregex.IsMatch(password))
+                Console.WriteLine("Valid password ");
             else
-                Console.WriteLine("number id is not valid");
+                Console.WriteLine("password is not valid");
         }
 
         public static void Main(string[] args)
         {
             Program person = new Program();
-            Console.WriteLine("Enter mobile number:");
-            string mobileNumber = Console.ReadLine();
-
-            person.mobileNumberValidation(mobileNumber);
+            Console.WriteLine("Enter password as per Rule1");
+            string password = Console.ReadLine();
+            person.passwordValidation(password);
         }
 
 
