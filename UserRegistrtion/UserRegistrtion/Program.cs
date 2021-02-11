@@ -4,24 +4,26 @@ using System.Text.RegularExpressions;
 namespace RegExPattern
 {
     class Program
-    { 
-        //Validate the email id with 3 mandatory and 2 optional part
-        Regex emailIdregex = new Regex(@"^[A-Za-z]{3}[.]([a-zA-Z]{3})*[bl.co][.in]*");
+    {
+        //Validate with predefiend format mobile number
+        Regex mobileNumberregex = new Regex(@"^[1-9]{2}[][1-9]1{0}$");
        
-        public void emailIdValidation(string emailId)
+        public void mobileNumberValidation(string mobileNumber)
         {
-            Console.WriteLine("EmailId" + emailId);
-            if (emailIdregex.IsMatch(emailId))
-                Console.WriteLine("Valid email id ");
+            Console.WriteLine("mobile number" + mobileNumber);
+            if (mobileNumberregex.IsMatch(mobileNumber))
+                Console.WriteLine("Valid number ");
             else
-                Console.WriteLine("email id is not valid");
+                Console.WriteLine("number id is not valid");
         }
+
         public static void Main(string[] args)
         {
             Program person = new Program();
-            Console.WriteLine("Enter Email Id: ");
-            string emailId = Console.ReadLine();
-            person.emailIdValidation(emailId);
+            Console.WriteLine("Enter mobile number:");
+            string mobileNumber = Console.ReadLine();
+
+            person.mobileNumberValidation(mobileNumber);
         }
 
 
