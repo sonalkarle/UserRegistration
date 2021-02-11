@@ -5,9 +5,9 @@ namespace RegExPattern
 {
     class Program
     {
-       //Validate Password Rule1
-        Regex passwordregex = new Regex(@"^[A-Za-z]{8}$");
-        
+        //Validate password with Rule02
+        Regex passwordregex = new Regex(@"^[A-Z][A-Za-z]{7}$");
+       
         public void passwordValidation(string password)
         {
             Console.WriteLine("password " + password);
@@ -20,8 +20,9 @@ namespace RegExPattern
         public static void Main(string[] args)
         {
             Program person = new Program();
-            Console.WriteLine("Enter password as per Rule1");
+            Console.WriteLine("Enter password as per Rule02");
             string password = Console.ReadLine();
+            
             person.passwordValidation(password);
         }
 
