@@ -5,23 +5,25 @@ namespace RegExPattern
 {
     class Program
     {
-        Regex firstnameregex = new Regex(@"^[A-Z][A-Za-z]{2,}$");
+        //Validate the last name with first letter should be capital and minimum 3 character
+        Regex lastnameregex = new Regex(@"^[A-Z][A-Za-z]{2,}$");
 
-        public void FirstNameValidation(string firstName)
+        public void FirstNameValidation(string lastName)
         {
-            Console.WriteLine("first name" + firstName);
-            if (firstnameregex.IsMatch(firstName))
-                Console.WriteLine("Valid first name");
+            Console.WriteLine("last name" + lastName);
+            if (lastnameregex.IsMatch(lastName))
+                Console.WriteLine("Valid last name");
             else
                 Console.WriteLine("first name is not valid");
         }
         static void Main(string[] args)
         {
+
             Program person = new Program();
-            Console.WriteLine("Enter first name: ");
-            string firstName = Console.ReadLine();
+            Console.WriteLine("Enter last name: ");
+            string lastname = Console.ReadLine();
            
-            person.FirstNameValidation(firstName);
+            person.FirstNameValidation(lastname);
         }
 
 
