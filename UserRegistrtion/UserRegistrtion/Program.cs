@@ -5,9 +5,9 @@ namespace RegExPattern
 {
     class Program
     {
-        //Validate password with valid input as per rule3
-        Regex passwordregex = new Regex(@"^[A-Z][A-Za-z1-0]{6}[0-1]$");
-        
+       //Validate result with passsword rule 04
+        Regex passwordregex = new Regex(@"^[A-Z][A-Za-z1-9]{5}[@,-,$,*][0-1]$");
+      
         public void passwordValidation(string password)
         {
             Console.WriteLine("password " + password);
@@ -20,7 +20,6 @@ namespace RegExPattern
         public static void Main(string[] args)
         {
             Program person = new Program();
-            Console.WriteLine("Enter the password as per the rule 3 ");
             string password = Console.ReadLine();
             person.passwordValidation(password);
         }
