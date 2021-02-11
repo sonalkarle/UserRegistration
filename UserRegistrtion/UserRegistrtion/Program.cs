@@ -4,26 +4,24 @@ using System.Text.RegularExpressions;
 namespace RegExPattern
 {
     class Program
-    {
-        //Validate the last name with first letter should be capital and minimum 3 character
-        Regex lastnameregex = new Regex(@"^[A-Z][A-Za-z]{2,}$");
-
-        public void FirstNameValidation(string lastName)
+    { 
+        //Validate the email id with 3 mandatory and 2 optional part
+        Regex emailIdregex = new Regex(@"^[A-Za-z]{3}[.]([a-zA-Z]{3})*[bl.co][.in]*");
+       
+        public void emailIdValidation(string emailId)
         {
-            Console.WriteLine("last name" + lastName);
-            if (lastnameregex.IsMatch(lastName))
-                Console.WriteLine("Valid last name");
+            Console.WriteLine("EmailId" + emailId);
+            if (emailIdregex.IsMatch(emailId))
+                Console.WriteLine("Valid email id ");
             else
-                Console.WriteLine("first name is not valid");
+                Console.WriteLine("email id is not valid");
         }
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-
             Program person = new Program();
-            Console.WriteLine("Enter last name: ");
-            string lastname = Console.ReadLine();
-           
-            person.FirstNameValidation(lastname);
+            Console.WriteLine("Enter Email Id: ");
+            string emailId = Console.ReadLine();
+            person.emailIdValidation(emailId);
         }
 
 
